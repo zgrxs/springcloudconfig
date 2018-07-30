@@ -1,7 +1,7 @@
 package com.panshi;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.config.server.EnableConfigServer;
 
 @SpringBootApplication
@@ -9,6 +9,7 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 public class SpringConfigServerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringConfigServerApplication.class, args);
+		new SpringApplicationBuilder(SpringConfigServerApplication.class).web(true).run(args);
+
     }
 }
